@@ -10,7 +10,8 @@ angular.module('shortly.shorten', [])
     if (!validate[0]) {
       console.log('url not valid');
     } else {
-      Links.addOne($scope.link.url); 
+      Links.addOne($scope.link.url);
+      $location.path('/links');
     }
   };
 
