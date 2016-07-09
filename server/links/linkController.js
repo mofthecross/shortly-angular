@@ -10,6 +10,7 @@ var findAllLinks = Q.nbind(Link.find, Link);
 module.exports = {
 
   allLinks: function (req, res, next) {
+    console.log('inside allLinks');
     findAllLinks({})
       .then(function (links) {
         res.json(links);
