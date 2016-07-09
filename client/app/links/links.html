@@ -1,4 +1,8 @@
-<div class='link' ng-repeat="link in data.links">
+<label>Search: <input ng-model="searchText"></label>
+
+<!--<tr ng-repeat="link in data.links | filter:searchText">-->
+
+<div class='link' ng-repeat="link in data.links | orderBy: 'visits': true | filter:searchText">
   <!-- Your html here -->
   <div class='info'>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
