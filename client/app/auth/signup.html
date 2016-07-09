@@ -1,9 +1,15 @@
 <div id='signup'>
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
-    <input type='text' ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
+    <input type='text' name='username' ng-model='user.username' ng-pattern='/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/' required>
+    <input type="password" ng-model='user.password' required>
     <button>signup</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+  <div class='errorMessage' ng-messages='signupForm.username.$error' ng-show="signupForm.username.$touched">
+    <div ng-message='pattern'>Username and password must be valid</div>
+    <div ng-message='required'>Both username and password required</div>
+  </div>
+
+</div>
 </div>

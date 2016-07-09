@@ -5,9 +5,13 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   $scope.addLink = function() {
-    console.log('After link submit: ', $scope.link.url);
-    Links.addOne($scope.link.url); 
+    var validate = document.getElementsByClassName('errorMessage ng-inactive');
+    console.log('validate', validate);
+    if (!validate[0]) {
+      console.log('url not valid');
+    } else {
+      Links.addOne($scope.link.url); 
+    }
   };
-
 
 });
