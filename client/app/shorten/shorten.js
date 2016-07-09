@@ -4,14 +4,15 @@ angular.module('shortly.shorten', [])
   // Your code here
   $scope.link = {};
 
-  $scope.addLink = function(url) {
-    Links.addOne(url)
-      .then(function(response) {
-        console.log('addLink', response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+  $scope.addLink = function() {
+    console.log('After link submit: ', $scope.link.url);
+    Links.addOne($scope.link.url);
+      // .then(function(response) {
+      //   console.log('addLink', response);
+      // })
+      // .catch(function(error) {
+      //   console.log(error);
+      // });
 
   };
 

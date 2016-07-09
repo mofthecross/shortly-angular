@@ -15,10 +15,11 @@ angular.module('shortly.services', [])
   };
 
   var addOne = function(url) {
+    console.log('addOne', url);
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: url
+      data: {url: url}
     })
     .then(function(response) {
       console.log(response);
